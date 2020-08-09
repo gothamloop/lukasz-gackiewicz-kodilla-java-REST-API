@@ -15,12 +15,14 @@ repositories {
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'junit:junit:4.12'
-	implementation 'junit:junit:4.12'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	compileOnly('org.projectlombok:lombok')
-	annotationProcessor('org.projectlombok:lombok')
+
+	//implementation 'org.springframework.boot:spring-boot-starter-web'
+	//implementation 'junit:junit:4.12'
+	//implementation 'junit:junit:4.12'
+	//testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	//compileOnly('org.projectlombok:lombok')
+	//annotationProcessor('org.projectlombok:lombok')
 
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.projectlombok:lombok')
