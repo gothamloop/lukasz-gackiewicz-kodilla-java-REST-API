@@ -29,7 +29,7 @@ public class DbService {
         return repository.findById(id);
     }
 
-    public Optional<Task> getAllTasks_zad(final Long id) {
+    public Optional<Task> getAllTasks(final Long id) {
                 return repository.findById(id);
     }
 
