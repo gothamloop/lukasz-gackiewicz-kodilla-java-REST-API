@@ -16,7 +16,7 @@ import java.util.List;
 @Component
 public class TrelloClient {
 
-    @Value("${trello.api.endpoint.prod}")
+    @Value("${trello.app.endpoint.prod}")
     private String trelloApiEndpoint;
 
     @Value("${trello.app.key}")
