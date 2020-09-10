@@ -33,8 +33,10 @@ public class TrelloClient {
         URI url = UriComponentsBuilder.fromHttpUrl(trelloApiEndpoint + "/members/kodillauser/boards")
                 .queryParam("key", trelloAppKey)
                 .queryParam("token", trelloToken)
-                .queryParam("fields", "name,id").build().encode().toUri();
-        TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
+                .queryParam("fields", "name,id")
+                .queryParam("lists","all").build().encode().toUri();
+
+                TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
 
         if (boardsResponse != null) {
             return Arrays.asList(boardsResponse);
