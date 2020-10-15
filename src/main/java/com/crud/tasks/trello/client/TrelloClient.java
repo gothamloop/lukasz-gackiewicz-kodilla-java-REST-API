@@ -13,6 +13,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import static java.util.Optional.ofNullable;
+
 @Component
 public class TrelloClient {
 
@@ -51,10 +53,13 @@ public class TrelloClient {
 
         TrelloBoardDto[] boardsResponse = restTemplate.getForObject(url, TrelloBoardDto[].class);
 
-        if (boardsResponse != null) {
-            return Arrays.asList(boardsResponse);
-        }
-        return new ArrayList<>();
+     //   if (boardsResponse != null) {
+     //       return Arrays.asList(boardsResponse);
+     //   }
+        return Arrays.asList(ofNullable(boardsResponse).orElse(new TrelloBoardDto[0]));
+
+
+        //return new ArrayList<>();
     }
 
     private URI getURL() {
