@@ -25,12 +25,14 @@ repositories {
 
 dependencies {
 	annotationProcessor('org.projectlombok:lombok')
-	compile('org.springframework.boot:spring-boot-starter-web')
+	compileOnly('org.projectlombok:lombok')
 	compile('org.projectlombok:lombok')
+	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	//For Heroku aby działał wyremowane
     compile('mysql:mysql-connector-java')
 //	compile('org.postgresql:postgresql')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
     providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+
 }
