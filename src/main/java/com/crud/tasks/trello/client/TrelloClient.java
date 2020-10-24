@@ -66,10 +66,10 @@ public class TrelloClient {
 
     private URI getURL() {
 
-        return UriComponentsBuilder.fromHttpUrl(trelloApiEndpoint + "/members/kodillauser/boards")
+        return UriComponentsBuilder.fromHttpUrl(trelloApiEndpoint + "/members/kodilla7/boards")
                 .queryParam("key", trelloAppKey)
                 .queryParam("token", trelloToken)
-                .queryParam("username", trelloUsername)
+            //    .queryParam("username", trelloUsername)
                 .queryParam("fields", "name,id")
                 .queryParam("lists","all").build().encode().toUri();
 
