@@ -8,7 +8,6 @@ import com.crud.tasks.domain.TrelloCardDto;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
@@ -36,9 +35,9 @@ public class TrelloClient {
 
     private URI getURL() {
 
-        return UriComponentsBuilder.fromHttpUrl(trelloConfig.trelloApiEndpoint() + "/members/kodilla7/boards")
-                .queryParam("key", trelloConfig.trelloAppKey())
-                .queryParam("token", trelloConfig.trelloToken())
+        return UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/members/kodilla7/boards")
+                .queryParam("key", trelloConfig.getTrelloAppKey())
+                .queryParam("token", trelloConfig.getTrelloToken())
                 .queryParam("fields", "name,id")
                 .queryParam("lists","all").build().encode().toUri();
 
@@ -90,9 +89,9 @@ public class TrelloClient {
 
 
     public CreatedTrelloCard createNewCard(TrelloCardDto trelloCardDto) {
-        URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.trelloApiEndpoint() + "/cards")
-                .queryParam("key", trelloConfig.trelloAppKey())
-                .queryParam("token", trelloConfig.trelloToken())
+        URI url = UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/cards")
+                .queryParam("key", trelloConfig.getTrelloAppKey())
+                .queryParam("token", trelloConfig.getTrelloToken())
                 .queryParam("name", trelloCardDto.getName())
                 .queryParam("desc", trelloCardDto.getDescription())
                 .queryParam("pos", trelloCardDto.getPos())
