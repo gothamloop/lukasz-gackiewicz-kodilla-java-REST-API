@@ -40,4 +40,9 @@ dependencies {
 	//dla Heroku zaremowane
  //   providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 
+
+	//do Swaggera
+	compile('io.springfox:springfox-swagger2:2.7.0')
+	compile('io.springfox:springfox-swagger-ui:2.7.0')
+
 }
