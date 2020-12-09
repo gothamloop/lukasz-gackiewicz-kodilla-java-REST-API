@@ -30,7 +30,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	annotationProcessor('org.projectlombok:lombok')
 	compileOnly('org.projectlombok:lombok')
-
+	compile('org.springframework.boot:spring-boot-starter-mail:2.3.1.RELEASE')
 
 	//For Heroku aby działał zaremowane
 	compile('mysql:mysql-connector-java')
