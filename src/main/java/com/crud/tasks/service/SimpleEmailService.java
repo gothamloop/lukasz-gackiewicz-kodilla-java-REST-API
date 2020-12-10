@@ -1,6 +1,8 @@
 package com.crud.tasks.service;
 
 import com.crud.tasks.domain.Mail;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,7 +13,9 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.mail.javamail.MimeMessagePreparator;
 import org.springframework.stereotype.Service;
 
+@Slf4j
 @Service
+@RequiredArgsConstructor
 public class SimpleEmailService {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SimpleEmailService.class);
@@ -19,7 +23,7 @@ public class SimpleEmailService {
     @Autowired
     private JavaMailSender javaMailSender;
 
-   public void send(final Mail mail) {
+    public void send(final Mail mail) {
         LOGGER.info("Starting email preparation...");
         try {
             SimpleMailMessage mailMessage = createMailMessage(mail);
@@ -29,12 +33,13 @@ public class SimpleEmailService {
         }
     }
 
-
     private SimpleMailMessage createMailMessage(final Mail mail) {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(mail.getMailTo());
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
+
+        javaMailSender.send(mailMessage);
         if (!mail.getToCc().isEmpty()){
             mailMessage.setCc(mail.getToCc());
         }
