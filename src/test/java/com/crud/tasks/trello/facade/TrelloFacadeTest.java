@@ -7,14 +7,16 @@ import com.crud.tasks.domain.TrelloListDto;
 import com.crud.tasks.mapper.TrelloMapper;
 import com.crud.tasks.service.TrelloService;
 import com.crud.tasks.trello.validator.TrelloValidator;
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import java.util.ArrayList;
 import java.util.List;
-import static org.junit.Assert.*;
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.anyList;
 import static org.mockito.Mockito.when;
 
@@ -68,7 +70,7 @@ public class TrelloFacadeTest {
         trelloLists.add(new TrelloListDto("1", "my_list", false));
 
         List<TrelloBoardDto> trelloBoards = new ArrayList<>();
-        trelloBoards.add(new TrelloBoardDto("1", "my_task", trelloLists));
+        trelloBoards.add(new TrelloBoardDto("my_task", "1", trelloLists));
 
         List<TrelloList> mappedTrelloLists = new ArrayList<>();
         mappedTrelloLists.add(new TrelloList("1", "my_list", false));
