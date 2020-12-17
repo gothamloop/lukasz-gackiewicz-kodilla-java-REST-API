@@ -31,6 +31,7 @@ dependencies {
 	annotationProcessor('org.projectlombok:lombok')
 	compileOnly('org.projectlombok:lombok')
 	compile('org.springframework.boot:spring-boot-starter-mail:2.3.1.RELEASE')
+	compile('com.google.code.gson:gson:2.8.2')
 
 	//For Heroku aby działał zaremowane
 	compile('mysql:mysql-connector-java')
