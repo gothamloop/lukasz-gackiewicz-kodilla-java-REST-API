@@ -34,6 +34,7 @@ dependencies {
 	compile('com.google.code.gson:gson:2.8.2')
 
 	compile('org.springframework.boot:spring-boot-starter-actuator')
+	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
 	//For Heroku aby działał zaremowane
 	compile('mysql:mysql-connector-java')
