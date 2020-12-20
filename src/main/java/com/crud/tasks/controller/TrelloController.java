@@ -17,9 +17,23 @@ import java.util.List;
 @RequestMapping("/v1/trello")
 public class TrelloController {
 
+    @Autowired
+    private TrelloFacade trelloFacade;
+
+    @RequestMapping(method = RequestMethod.GET, value = "/boards")
+    public List<TrelloBoardDto> getTrelloBoards() {
+        return trelloFacade.fetchTrelloBoards();
+    }
+
+    @RequestMapping(method = RequestMethod.POST, value = "/cards")
+    public CreatedTrelloCardDto createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
+        return trelloFacade.createCard(trelloCardDto);
+    }
+
+
+    /*
  //   @Autowired
  //   private TrelloClient trelloClient;
-
 
     //private TrelloService trelloService;
     @Autowired
@@ -34,7 +48,7 @@ public class TrelloController {
     public CreatedTrelloCardDto createTrelloCard(@RequestBody TrelloCardDto trelloCardDto) {
         return trelloFacade.createCard(trelloCardDto);
     }
-
+   */
 
 //    public getTrelloBoards() {
 // GET request
