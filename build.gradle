@@ -11,7 +11,7 @@ apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
 //For Heroku trzeba zaremowac
-apply plugin: 'war'
+//apply plugin: 'war'
 
 
 group = 'com.crud'
@@ -37,15 +37,15 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 
 	//For Heroku aby działał zaremowane
-	compile('mysql:mysql-connector-java')
+	//compile('mysql:mysql-connector-java')
 
 	//Dla Heroku odremowac
-//	compile('org.postgresql:postgresql')
+	compile('org.postgresql:postgresql')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
 	//dla Heroku zaremowane
-    providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
+    //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 
 
 	//do Swaggera
