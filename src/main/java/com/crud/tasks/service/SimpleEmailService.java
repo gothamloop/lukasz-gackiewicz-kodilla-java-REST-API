@@ -3,6 +3,7 @@ package com.crud.tasks.service;
 import com.crud.tasks.domain.Mail;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.logging.log4j.util.Strings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -75,12 +76,18 @@ public class SimpleEmailService {
         mailMessage.setSubject(mail.getSubject());
         mailMessage.setText(mail.getMessage());
 
-        javaMailSender.send(mailMessage);
+   //     javaMailSender.send(mailMessage);
+
+
+
         if (!mail.getToCc().isEmpty()){
             mailMessage.setCc(mail.getToCc());
         }
+   //     if (Strings.isNotEmpty(mail.getToCc())) {
+   //         mailMessage.setCc(mail.getToCc());
+   //     }
 
-        return mailMessage;
+       return mailMessage;
     }
 }
 
