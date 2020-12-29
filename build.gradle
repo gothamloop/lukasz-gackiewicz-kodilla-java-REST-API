@@ -44,7 +44,7 @@ dependencies {
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 
-	//dla Heroku zaremowane
+	//dla Heroku zaremowac
     //providedRuntime("org.springframework.boot:spring-boot-starter-tomcat")
 
 
