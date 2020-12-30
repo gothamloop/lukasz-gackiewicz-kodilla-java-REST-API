@@ -38,7 +38,8 @@ public class TrelloClient {
         return UriComponentsBuilder.fromHttpUrl(trelloConfig.getTrelloApiEndpoint() + "/members/kodilla7/boards")
                 .queryParam("key", trelloConfig.getTrelloAppKey())
                 .queryParam("token", trelloConfig.getTrelloToken())
-                .queryParam("fields", "name,id")
+            //oryginal .queryParam("fields", "name,id")
+                .queryParam("fields", "id,name")
                 .queryParam("lists","all").build().encode().toUri();
 
     }

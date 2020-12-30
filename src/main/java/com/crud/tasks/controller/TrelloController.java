@@ -9,9 +9,6 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//@CrossOrigin(origins = "*")
-//@RestController
-//@RequestMapping("/v1/trello")
 @RestController
 @RequestMapping("/v1/trello")
 @CrossOrigin("*")
