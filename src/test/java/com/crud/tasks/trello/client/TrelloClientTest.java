@@ -50,7 +50,7 @@ public class TrelloClientTest {
         when(trelloConfig.getTrelloToken()).thenReturn("test");
 
         TrelloBoardDto[] trelloBoards = new TrelloBoardDto[1];
-        trelloBoards[0] = new TrelloBoardDto( "test_board", "test_id", new ArrayList<>());
+        trelloBoards[0] = new TrelloBoardDto( "1", "test_board", new ArrayList<>());
 
         URI uri = new URI("http://test.com/members/kodilla7/boards?key=test&token=test&fields=name,id&lists=all");
 
@@ -62,7 +62,7 @@ public class TrelloClientTest {
 
         //Then
         assertEquals(1, fetchedTrelloBoards.size());
-        assertEquals("test_id", fetchedTrelloBoards.get(0).getId());
+        assertEquals("1", fetchedTrelloBoards.get(0).getId());
         assertEquals("test_board", fetchedTrelloBoards.get(0).getName());
         assertEquals(new ArrayList<>(), fetchedTrelloBoards.get(0).getLists());
 
