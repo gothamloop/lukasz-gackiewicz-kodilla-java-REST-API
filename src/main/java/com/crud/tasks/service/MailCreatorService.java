@@ -27,7 +27,7 @@ public class MailCreatorService {
         context.setVariable("tasks_url", "http://localhost:8888/crud");    //"http://localhost:8888/crud");
         context.setVariable("button", "Visit website");
         context.setVariable("admin_name", adminConfig.getAdminName());
-        return templateEngine.process("mail/created-trello-card-mail", context);
+        return templateEngine.process("templates.mail/created-trello-card-mail", context);
     }
 
     String CompanyEmail(String message) {
@@ -41,6 +41,6 @@ public class MailCreatorService {
         context.setVariable("company", companyConfig.getCompanyName());
         context.setVariable("company_email", companyConfig.getCompanyEmail());
         context.setVariable("admin_config", adminConfig);
-        return templateEngine.process("mail/created-trello-card-mail", context);
+        return templateEngine.process("templates.mail/created-trello-card-mail", context);
     }
 }
